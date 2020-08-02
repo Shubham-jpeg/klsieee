@@ -1,0 +1,381 @@
+
+#title{
+  color: #fff;
+  height: 250px;
+  background-color: #394989;
+}
+
+.ban{
+  position: absolute;
+  width: 10%;
+  height: 20%;
+  margin-left: 200px;
+  left:600px;
+  top: 300px;
+
+
+}
+
+.blur-git{
+  width: 550%;
+  height: 240%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+  filter: blur(35px);
+}
+
+.ieee{
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  /*width: 20%
+  height:20%;*/
+  padding-top: 5px;
+  left: 50rem;
+  top: 5rem;
+  text-align: center;
+
+}
+
+
+
+.toggler{
+  /* ALWAYS KEEPING THE TOGGLER OR THE CHECKBOX ON TOP OF EVERYTHING :  */
+    z-index:0;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    opacity: 0;
+
+}
+
+.hamburger{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 40px;
+    width: 40px;
+    padding: 0.6rem;
+
+  /* FOR DISPLAYING EVERY ELEMENT IN THE CENTER : */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* CREATING THE MIDDLE LINE OF THE HAMBURGER : */
+
+.hamburger > div{
+    position: relative;
+    top: 0;
+    left: 0;
+    background: white;
+    height: 2px;
+    width: 60%;
+    transition: all  0.4s ease;
+}
+
+/* CREATING THE TOP AND BOTTOM LINES :
+TOP AT -10PX ABOVE THE MIDDLE ONE AND BOTTOM ONE IS 10PX BELOW THE MIDDLE: */
+
+.hamburger > div::before,
+.hamburger > div::after{
+    content: '';
+    position: absolute;
+    top: -10px;
+    background: white;
+    width: 100%;
+    height: 2px;
+    transition: all  0.4s ease;
+}
+
+.hamburger > div::after{
+    top: 10px;
+}
+
+/* IF THE TOGGLER IS IN ITS CHECKED STATE, THEN SETTING THE BACKGROUND OF THE MIDDLE LAYER TO COMPLETE BLACK AND OPAQUE :  */
+
+.toggler:checked + .hamburger > div{
+    background: rgba(0,0,0,0);
+}
+
+.toggler:checked + .hamburger > div::before{
+    top: 0;
+    transform: rotate(45deg);
+    background: black;
+}
+
+/* AND ROTATING THE TOP AND BOTTOM LINES :  */
+
+.toggler:checked + .hamburger > div::after{
+    top: 0;
+    transform: rotate(135deg);
+    background: black;
+}
+
+
+/* MAIN MENU WITH THE WHITE BACKGROUND AND THE TEXT :  */
+
+.menu{
+    background: white;
+    width: 0%;
+
+  /* APPLYING TRANSITION TO THE MENU :  */
+
+    transition: all 0.4s ease;
+}
+
+/* IF THE TOGGLER IS CHECKED, THEN INCREASE THE WIDTH OF THE MENU TO 30% , CREATING A SMOOTH EFFECT :  */
+
+.toggler:checked ~ .menu{
+    width: 20%;
+}
+
+
+/* STYLING THE LIST :  */
+
+.menu >  div > ul{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 20px;
+    padding-left: 10px;
+
+  /* HIDDEN INITIALLY  :  */
+
+    visibility: hidden;
+}
+
+.menu > div > ul > li{
+    list-style: none;
+    padding: 0.5rem;
+}
+
+.menu > div > ul > li > a{
+    color: black;
+    text-decoration: none;
+    font-size: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* WHEN THE TOGGLER IS CHECKED, CHANGE THE VISIBILITY TO VISIBLE :  */
+
+.toggler:checked ~ .menu > div > ul{
+    transition: visibility 0.4s ease;
+    transition-delay: 0.1s;
+    visibility: visible;
+}
+
+.toggler:checked ~ .menu > div > ul > li > a:hover{
+    color: orange;
+}
+
+
+.btn-search {
+	  background: #394989;      /*394989*/
+	  border-radius: 0;
+	  color: #fff;
+	  border-width: 1px;
+	  border-style:
+	  border-color: #1c1c1c;
+
+	}
+
+  .btnn{
+    margin-top: 250px;
+  }
+
+  .form-control{
+    width: 50%;
+  }
+
+	.btn-search:link, .btn-search:visited {
+	  color: #fff;
+	}
+	.btn-search:active, .btn-search:hover {
+	  background: #1c1c1c;
+	  color: #fff;
+	}
+
+
+.container-fluid{
+  /*padding:2% 4%;*/
+}
+
+.my-button{
+  /*position: absolute;*/
+/*  left: 10%;
+  top: 20%;*/
+}
+
+
+h1{
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 3.5rem;
+  line-height: 1.5;
+}
+
+
+h2{
+  font-family: 'Ubuntu-bold', sans-serif;
+  line-height: 1.5;
+  font-size: 2.5rem;
+  margin-bottom: 3%;
+}
+
+
+h3{
+  font-family: 'Ubuntu', sans-serif;
+  line-height: 1.5;
+  font-weight: bolder;
+  padding-bottom: 3%;
+}
+
+
+p{
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5;
+  color: #8f8f8f;
+}
+
+
+.navbar{
+  padding:0 0 5.0rem;
+}
+
+/*.navbar-brand{
+  font-size: 1.5rem;
+  font-family: 'Ubuntu', sans-serif;
+  /*font-family: 'Dancing Script', cursive;*/
+  /*font-family: 'Roboto', sans-serif;*/
+  /*font-weight: bold;
+  /*width: 25%;
+  /*top: 8rem;*/
+  /*right: 13.5rem;*/
+  /*top: 5px;*/
+}
+
+.nav-item{
+  padding:0 18px;
+}
+
+.nav-link{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.download-button{
+  margin: 5% 3% 5% 0;
+}
+
+
+/*title-image*/
+.title-image{
+  width: 60%;
+  transform: rotate(20deg);
+}
+
+/*features*/
+
+#features{
+  background-color: #fff;
+}
+
+.feat{
+  background-color: #fff
+
+}
+
+.header3{
+
+}
+
+.images{
+  color: #ef8172;
+  margin-bottom: 1rem;
+}
+
+.images:hover{
+  color :#ff4c68;
+}
+
+.feature-box{
+  /*text-align: center;*/
+  padding: 3%;
+}
+
+#testimonials{
+  text-align: center;
+  background-color: #394989;
+  color: #fff;
+
+}
+
+.testimonial-image{
+  width: 10%;
+  border-radius: 100%;
+  margin: 20px;
+}
+
+#press{
+  background-color: #394989;
+  text-align: center;
+  padding-bottom: 3%;
+}
+
+.press{
+  width: 15%;
+  margin: 20px 20px 50px;
+}
+
+.carousel-item{
+  padding:7% 13%;
+}
+
+/*pricing*/
+
+#pricing{
+  padding: 100px;
+  text-align: center;
+}
+
+.pricing-column{
+  padding: 2% 3%;
+}
+
+#footer{
+  background-color: #e0dede;
+  color: #fff;
+  padding-top: 60px;
+  padding-left: 780px;
+  height: 250px;
+
+
+}
+
+.copyright{
+  color: #204051;
+  font-size: 1rem;     /*0.75 times 16px //75% of 16px*/
+  padding:20px 50px;    /* Top and Bottom || Left Right*/
+}
+
+.footer-link{
+  color: #204051;
+  padding: 0 7px;
+  margin :10px 20px;
+  line-height: 2;
+  font-family: 'Ubuntu', sans-serif;
+  text-decoration: none;
+  
+
+}
+.footer-link:hover{
+  color: #EAF6F5;
+}
